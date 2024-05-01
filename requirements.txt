@@ -1,0 +1,8 @@
+pytest                   # Pytest is a testing framework which allows us to write test codes using python
+allure-pytest            # Allure Framework is a flexible lightweight multi-language test report
+Appium-Python-Client     # Framework for testing mobile applications
+selenium                 # Selenium is a portable framework for testing web/mobile applications
+Faker                    # Faker is a Python package that generates fake data for you
+python-dotenv            # Python-dotenv reads key-value pairs from a .env file and can set them as environment variables
+requests                 # Requests is an elegant and simple HTTP library for Python
+trcli                    # Testrail CLI

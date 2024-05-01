@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="63.265" timestamp="2024-01-17T21:39:59.286274" hostname="ypetryk-MacBook-Pro.local"><testcase classname="tests.test_analytics_prosumer.TestAnalyticsProsumer" name="test_analytics_prosumer" file="tests/test_analytics_prosumer.py" line="25" time="62.882"><properties><property name="testrail_attachment" value="image.png" /><property name="test_id" value="C568" /></properties><failure message="AssertionError: assert False&#10; +  where False = &lt;bound method AnalyticsPage.check_feedIn_sum of &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt;&gt;('10,31')&#10; +    where &lt;bound method AnalyticsPage.check_feedIn_sum of &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt;&gt; = &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt;.check_feedIn_sum&#10; +      where &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt; = &lt;tests.test_analytics_prosumer.TestAnalyticsProsumer object at 0x1085d7c40&gt;.analytics_page">self = &lt;tests.test_analytics_prosumer.TestAnalyticsProsumer object at 0x1085d7c40&gt;, driver = &lt;appium.webdriver.webdriver.WebDriver (session="d1cc2d9e-8b3c-43e1-821e-74d67a52df3b")&gt;
+record_property = &lt;function record_property.&lt;locals&gt;.append_property at 0x1086cd3f0&gt;
+
+    @pytest.mark.analytics_prosumer
+    def test_analytics_prosumer(self, driver, record_property):
+        record_property("test_id", "C568")
+        #  Initialization
+        self.init(driver)
+    
+        # The user login
+        test_login(driver)
+    
+        # Execute API call
+        self.prosumer_value = prosumer_analytics(self.login, self.password)
+    
+        # The user wait when spinner is finished
+        self.home_page.wait_until_spinner_will_be_invisible()
+    
+        # The user select the Analytics tab
+        self.home_page.select_analytics_tab()
+    
+        # The user wait when spinner is finished
+        self.home_page.wait_until_spinner_will_be_invisible()
+    
+        # The user select the date picker
+        self.analytics_page.click_date_picker()
+    
+        # The user select the day tab
+        self.analytics_page.click_day_tab()
+    
+        # The user select the day
+        self.analytics_page.select_day(self.today, self.prev_day)
+    
+        # The user close the calendar
+        self.analytics_page.close_calendar()
+    
+        # The user wait when spinner is finished
+        self.home_page.wait_until_spinner_will_be_invisible()
+    
+        # The User check &lt;consumption sum&gt; value
+        assert self.analytics_page.check_consumption_sum(self.prosumer_value['consumption_sum'])
+    
+        # The User check &lt;feedIn&gt; value
+&gt;       assert self.analytics_page.check_feedIn_sum(self.prosumer_value['consumption_sum'])
+E       AssertionError: assert False
+E        +  where False = &lt;bound method AnalyticsPage.check_feedIn_sum of &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt;&gt;('10,31')
+E        +    where &lt;bound method AnalyticsPage.check_feedIn_sum of &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt;&gt; = &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt;.check_feedIn_sum
+E        +      where &lt;pages.analytics_page.AnalyticsPage object at 0x1086ddae0&gt; = &lt;tests.test_analytics_prosumer.TestAnalyticsProsumer object at 0x1085d7c40&gt;.analytics_page
+
+tests/test_analytics_prosumer.py:66: AssertionError</failure></testcase></testsuite></testsuites>

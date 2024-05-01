@@ -1,0 +1,7 @@
+host: https://powerfox.testrail.io/
+username: marcus.becker@powerfox.energy
+password: LSqaTeam@2022#
+title: Test_Run_1
+project: Powerfox_app
+file: reports/junit-report.xml
+run_id: 35

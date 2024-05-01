@@ -1,0 +1,2 @@
+[31m[1mERROR   [0m testrail_api:_session.py:114 Code: 400, reason: Bad Request url: https://powerfox.testrail.io/index.php?/api/v2/get_suite/None, content: b'{"error":"Field :suite_id is not a valid ID."}'
+[31m[1mERROR   [0m testrail_api:_session.py:114 Code: 400, reason: Bad Request url: https://powerfox.testrail.io/index.php?/api/v2/get_suite/None, content: b'{"error":"Field :suite_id is not a valid ID."}'
